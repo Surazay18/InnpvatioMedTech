@@ -1,23 +1,95 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InnpvatioMedTech.Views.DashboardView"
-             BackgroundColor="#878787">
-    <VerticalStackLayout Spacing="20" Padding="20">
-        <Label Text="Dashboard Overview" 
-               FontSize="24"
-               FontFamily="OpenSans-SemiBold"
-               TextColor="#f0f0f0"
-               HorizontalOptions="Center"/>
+             BackgroundColor="{AppThemeBinding Light=#F4F6F7, Dark=#1E1E1E}">
 
-        <Border Stroke="{AppThemeBinding Light=#EEEEEE, Dark=#444444}"
-                StrokeThickness="1"
-                StrokeShape="RoundRectangle 10"
-                BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
-                Padding="15"
-                HorizontalOptions="Fill">
-            <Label Text="Welcome to your medical dashboard"
-                   TextColor="{AppThemeBinding Light=#333333, Dark=White}"
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Dashboard Title -->
+            <Label Text="Medical Dashboard"
+                   FontSize="28"
+                   FontFamily="OpenSans-SemiBold"
+                   TextColor="{AppThemeBinding Light=#2C3E50, Dark=White}"
                    HorizontalOptions="Center"/>
-        </Border>
-    </VerticalStackLayout>
+
+            <!-- Grid of Dashboard Cards -->
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+
+                <!-- Card 1: Patients -->
+                <Border Grid.Row="0" Grid.Column="0"
+                        StrokeThickness="0"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="15">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Total Patients"
+                               FontSize="18"
+                               TextColor="{AppThemeBinding Light=#34495E, Dark=White}" />
+                        <Label Text="1,245"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#27AE60" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Card 2: Appointments -->
+        <Border Grid.Row="0" Grid.Column="1"
+                        StrokeThickness="0"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="15">
+
+            <VerticalStackLayout Spacing="10">
+                        <Label Text="Appointments Today"
+                               FontSize="18"
+                               TextColor="{AppThemeBinding Light=#34495E, Dark=White}" />
+                        <Label Text="76"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#2980B9" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Card 3: Revenue -->
+        <Border Grid.Row="1" Grid.Column="0"
+                        StrokeThickness="0"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="15">
+
+            <VerticalStackLayout Spacing="10">
+                        <Label Text="Revenue (This Week)"
+                               FontSize="18"
+                               TextColor="{AppThemeBinding Light=#34495E, Dark=White}" />
+                        <Label Text="$15,830"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#F39C12" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Card 4: Lab Results -->
+                <Border Grid.Row="1" Grid.Column="1"
+                        StrokeThickness="0"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="15">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Pending Lab Results"
+                               FontSize="18"
+                               TextColor="{AppThemeBinding Light=#34495E, Dark=White}" />
+                        <Label Text="23"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#E74C3C" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentView>
