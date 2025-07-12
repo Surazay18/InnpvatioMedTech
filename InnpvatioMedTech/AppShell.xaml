@@ -1,29 +1,43 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
        xmlns:pages="clr-namespace:InnpvatioMedTech.Pages"  
-       x:Class="InnpvatioMedTech.AppShell"  
+       x:Class="InnpvatioMedTech.AppShell"
+       Shell.TitleColor="White"
+       Shell.BackgroundColor="#281c4d"
        FlyoutBehavior="Locked"  
-       FlyoutBackgroundColor="#c7966b"  
+       FlyoutBackgroundColor="#281c4d"  
        FlyoutWidth="250"  
-       Shell.FlyoutHeaderBehavior="CollapseOnScroll">  
+       Shell.FlyoutHeaderBehavior="CollapseOnScroll">
 
+    <!-- Flyout Header with centered image -->
     <Shell.FlyoutHeader>
-        <Grid BackgroundColor="#e89258" HeightRequest="50" Padding="10">  
-            <Label Text="InnovatioMed" TextColor="Black" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>  
-        </Grid>  
-    </Shell.FlyoutHeader>  
+        <Grid BackgroundColor="#1c1040"
+              HeightRequest="60"
+              Padding="10"
+              VerticalOptions="Center"
+              >
+            <Image Source="dotnet_bot.png"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Dashboard" Icon="dashboard.png">  
+    <!-- Dashboard Menu -->
+    <FlyoutItem Title="Dashboard" Icon="dotnet_bot.png">
         <ShellContent  
             Title="Dashboard"  
             Route="Dashboard"  
-            ContentTemplate="{DataTemplate pages:DashboardPage}" />  
-    </FlyoutItem>  
+            ContentTemplate="{DataTemplate pages:DashboardPage}" />
+    </FlyoutItem>
 
-    <FlyoutItem Title="Patients" Icon="patients.png">  
+    <!-- Patients Menu -->
+    <FlyoutItem Title="Patients" Icon="patients.png">
         <ShellContent  
-            Title="Patients"  
+            Title="Patients Management"  
             Route="Patients"  
-            ContentTemplate="{DataTemplate pages:PatientsPage}" />  
-    </FlyoutItem>  
+            ContentTemplate="{DataTemplate pages:PatientsPage}" />
+    </FlyoutItem>
+
 </Shell>

@@ -1,27 +1,62 @@
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InnpvatioMedTech.Views.PatientsView"
-             BackgroundColor="#878787">
-    <VerticalStackLayout Spacing="20" Padding="20">
-        <Label Text="Patient Management" 
-               FontSize="24"
-               HorizontalOptions="Center"/>
+             BackgroundColor="{AppThemeBinding Light=#F4F6F7, Dark=#1E1E1E}">
 
-        <CollectionView>
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>John Smith</x:String>
-                    <x:String>Sarah Johnson</x:String>
-                    <x:String>Michael Brown</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Padding="10" CornerRadius="5">
-                        <Label Text="{Binding .}" FontSize="16"/>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            
+
+            <!-- Title -->
+            <Grid Padding="10"
+      WidthRequest="200"
+      HorizontalOptions="Start">
+                <Button Text="Add New Patients" BackgroundColor="#1c1040" TextColor="White" FontSize="14" />
+            </Grid>
+            <!-- Table Header -->
+            <Grid ColumnDefinitions="2*,*,2*" Padding="10" BackgroundColor="#424242">
+                <Label Grid.Column="0" Text="Patient Name" FontAttributes="Bold" VerticalOptions="Center" />
+                <Label Grid.Column="1" Text="Status" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Grid.Column="2" Text="Actions" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" />
+            </Grid>
+
+            <!-- Patient List -->
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>John Smith</x:String>
+                        <x:String>Sarah Johnson</x:String>
+                        <x:String>Michael Brown</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,Auto"
+                              Padding="10"
+                              BackgroundColor="{AppThemeBinding Light=Black, Dark=#2D2D2D}"
+                              Margin="0,1">
+
+                            <!-- Patient Name -->
+                            <Label Grid.Column="0" Text="{Binding .}" VerticalOptions="Center" />
+
+                            <!-- Status (Static for demo) -->
+                            <Label Grid.Column="1" Text="Active"
+                                   TextColor="#27AE60"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center" />
+
+                            <!-- Actions -->
+                            <HorizontalStackLayout Grid.Column="2" Spacing="10">
+                                <Button Text="View" BackgroundColor="#3498DB" TextColor="White" FontSize="12" />
+                                <Button Text="Edit" BackgroundColor="#F1C40F" TextColor="Black" FontSize="12" />
+                                <Button Text="Delete" BackgroundColor="#E74C3C" TextColor="White" FontSize="12" />
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentView>
