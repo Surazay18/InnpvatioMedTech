@@ -4,9 +4,10 @@
        x:Class="InnpvatioMedTech.AppShell"
        Shell.TitleColor="White"
        Shell.BackgroundColor="#281c4d"
+       Shell.TabBarUnselectedColor="Gray"
        FlyoutBehavior="Locked"  
        FlyoutBackgroundColor="#281c4d"  
-       FlyoutWidth="250"  
+       FlyoutWidth="150"  
        Shell.FlyoutHeaderBehavior="CollapseOnScroll">
 
     <!-- Flyout Header with centered image -->
@@ -14,8 +15,7 @@
         <Grid BackgroundColor="#1c1040"
               HeightRequest="60"
               Padding="10"
-              VerticalOptions="Center"
-              >
+              VerticalOptions="Center">
             <Image Source="dotnet_bot.png"
                    HeightRequest="40"
                    WidthRequest="40"
@@ -24,16 +24,16 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <!-- Dashboard Menu -->
-    <FlyoutItem Title="Dashboard" Icon="dotnet_bot.png">
+    <!-- Dashboard Menu with Icon -->
+    <FlyoutItem Title="Dashboard" Icon="dash.png">
         <ShellContent  
             Title="Dashboard"  
             Route="Dashboard"  
             ContentTemplate="{DataTemplate pages:DashboardPage}" />
     </FlyoutItem>
 
-    <!-- Patients Menu -->
-    <FlyoutItem Title="Patients" Icon="patients.png">
+    <!-- Patients Menu with Icon -->
+    <FlyoutItem Title="Patients" Icon="patient.png">
         <ShellContent  
             Title="Patients Management"  
             Route="Patients"  
