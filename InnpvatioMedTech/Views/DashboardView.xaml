@@ -1,0 +1,23 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InnpvatioMedTech.Views.DashboardView"
+             BackgroundColor="#878787">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label Text="Dashboard Overview" 
+               FontSize="24"
+               FontFamily="OpenSans-SemiBold"
+               TextColor="#f0f0f0"
+               HorizontalOptions="Center"/>
+
+        <Border Stroke="{AppThemeBinding Light=#EEEEEE, Dark=#444444}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#2D2D2D}"
+                Padding="15"
+                HorizontalOptions="Fill">
+            <Label Text="Welcome to your medical dashboard"
+                   TextColor="{AppThemeBinding Light=#333333, Dark=White}"
+                   HorizontalOptions="Center"/>
+        </Border>
+    </VerticalStackLayout>
+</ContentView>
